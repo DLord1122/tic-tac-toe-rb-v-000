@@ -3,10 +3,11 @@
 require_relative '../lib/tic_tac_toe'
 puts "Welcome to Tic Tac Toe!"
 display_board(board)
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 input = gets.strip
 puts "Where would you like to go?"
 
 index=input_to_index(input)
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
 
 move(board, index, user_marker = "X")
