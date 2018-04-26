@@ -43,9 +43,9 @@ WIN_COMBINATIONS = [
     end
       taken
   end
-  def move(index, token = "X")
-    @board[index] = token
-  end
+  def move(index, current_player = "X")
+    @board[index] = current_player
+end
   def turn(board)
     puts "Please enter 1-9:"
     input = gets.strip
