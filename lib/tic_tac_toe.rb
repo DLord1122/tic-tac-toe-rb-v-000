@@ -43,7 +43,7 @@ WIN_COMBINATIONS = [
     end
       taken
   end
-  def move(board, index, " ")
+  def move(board, index, token = " ")
     board[index.to_i] = " "
   end
   def turn(board)
