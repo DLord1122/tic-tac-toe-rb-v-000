@@ -7,6 +7,7 @@ game = TicTacToe.new
 game.play
 
 display_board(board)
+
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 input = gets.strip
 puts "Where would you like to go?"
