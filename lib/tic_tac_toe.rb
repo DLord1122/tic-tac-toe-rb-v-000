@@ -24,6 +24,29 @@ WIN_COMBINATIONS = [
     puts " #{board[6]} | #{board[7]} | #{board[8]} "
     board = [ " ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
+  def input_to_index(user_input)
+    index = user_input.to_i - 1
+  end
+  def valid_move?(board, index)
+     if index.between?(0,8) && !position_taken?(board, index)
+       true
+     else
+       false
+      end
+   end
+   def position_taken?(board, index)
+    taken = nil
+    if (board[index] ==  " " || board[index] == nil)
+      taken = false
+    else
+      taken = true
+    end
+      taken
+  end
+  def move(board, index, current_player = "X")
+    board[index.to_i] = current_player
+  end
+
   def won?(board)
     WIN_COMBINATIONS.detect do |win_combo|
       if (board[win_combo[0]]) == "X" && (board[win_combo[1]]) == "X" && (board[win_combo[2]]) == "X"
@@ -86,26 +109,3 @@ end
  def position_taken?(board, location)
   board[location] != " "
  end
-
-def input_to_index(user_input)
-  index = user_input.to_i - 1
-end
-def valid_move?(board, index)
-   if index.between?(0,8) && !position_taken?(board, index)
-     true
-   else
-     false
-    end
- end
- def position_taken?(board, index)
-  taken = nil
-  if (board[index] ==  " " || board[index] == nil)
-    taken = false
-  else
-    taken = true
-  end
-    taken
-end
-def move(board, index, current_player = "X")
-  board[index.to_i] = current_player
-end
