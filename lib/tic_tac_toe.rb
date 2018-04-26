@@ -44,7 +44,7 @@ WIN_COMBINATIONS = [
       taken
   end
   def move(index, token = "X")
-    @board[index.to_i] = token
+    @board[index] = token
   end
   def turn(board)
     puts "Please enter 1-9:"
