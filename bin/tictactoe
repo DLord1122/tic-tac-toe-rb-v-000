@@ -1,9 +1,11 @@
-#!/usr/bin/env ruby
+
+puts "Welcome to Tic Tac Toe!"
 require 'pry'
+
 require_relative '../lib/tic_tac_toe'
 game = TicTacToe.new
 game.play
-puts "Welcome to Tic Tac Toe!"
+
 display_board(board)
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 input = gets.strip
