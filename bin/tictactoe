@@ -1,18 +1,6 @@
 
-puts "Welcome to Tic Tac Toe!"
-require 'pry'
-
 require_relative '../lib/tic_tac_toe'
-game = TicTacToe.new
-game.play
-
-display_board(board)
-
+puts "Welcome to Tic Tac Toe!"
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-input = gets.strip
-puts "Where would you like to go?"
-
-index=input_to_index(input)
-
-
-move(board, index, user_marker = "X")
+display_board(board)
+play(board)
