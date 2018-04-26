@@ -15,6 +15,15 @@ WIN_COMBINATIONS = [
     [0,4,8],
     [2,4,6]
   ]
+  def display_board(board)
+
+    puts " #{board[0]} | #{board[1]} | #{board[2]} "
+    puts "-----------"
+    puts " #{board[3]} | #{board[4]} | #{board[5]} "
+    puts "-----------"
+    puts " #{board[6]} | #{board[7]} | #{board[8]} "
+    board = [ " ", " ", " ", " ", " ", " ", " ", " ", " "]
+  end
   def won?(board)
     WIN_COMBINATIONS.detect do |win_combo|
       if (board[win_combo[0]]) == "X" && (board[win_combo[1]]) == "X" && (board[win_combo[2]]) == "X"
@@ -62,15 +71,7 @@ end
 def current_player(board)
   turn_count(board) % 2 == 0 ? "X" : "O"
 end
-def display_board(board)
 
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts "-----------"
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts "-----------"
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
-  board = [ " ", " ", " ", " ", " ", " ", " ", " ", " "]
-end
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
